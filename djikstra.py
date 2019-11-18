@@ -112,7 +112,7 @@ def dijsktra(graph, initial, end):
         path.append(current_node)
         next_node = shortest_paths[current_node][0]
         current_node = next_node
-        print("going back destinations in shortest path",current_node)
+        print("Work back through destinations in shortest path",current_node)
     # Reverse path
     path = path[::-1]
     print("")
