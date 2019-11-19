@@ -1,6 +1,6 @@
 from collections import defaultdict
 import time
-start_time = time.time()
+
 
 
 listofnodes = []
@@ -55,7 +55,7 @@ edges = [
     ('X', 'C', 8),
     ('X', 'E', 4),
     ('A', 'D', 2),
-    ('D', 'G', 100),
+    ('D', 'G', 9),
     ('B', 'G', 3),
     ('E', 'F', 7),
     ('F', 'G', 7),
@@ -64,11 +64,12 @@ edges = [
     ('H', 'J', 8),
     ('I', 'J', 7),
 ]
-"""
+"""""
 for edge in edges:
     graph.add_edge(*edge)
 listofnodes = list(dict.fromkeys(listofnodes))
 print("list of unvisited nodes",listofnodes)
+start_time = time.time()
 def dijsktra(graph, initial, end):
     # shortest paths is a dict of nodes
     # whose value is a tuple of (previous node, weight)
@@ -121,7 +122,7 @@ def dijsktra(graph, initial, end):
     return path
 
 
-dijsktra(graph, 'X', 'Y')
+dijsktra(graph, 'X', 'J')
 print("execution time = --- %s ms ---" % ((time.time() - start_time)*1000))
 
 print("the time complexity in this case is O(E+VlogV)")
